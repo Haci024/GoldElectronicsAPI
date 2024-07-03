@@ -16,6 +16,7 @@ namespace Data.Connection
         public DbSet<Category> Categories { get; set; }
         public DbSet<ContactUs> ContactUs { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Comments> Comments { get; set; }
         public DbSet<ImageList> ImageList { get; set; }
         public DbSet<Localization> Localizations { get; set; }
         public DbSet<Marks> Marks { get; set; }

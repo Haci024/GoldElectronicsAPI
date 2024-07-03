@@ -18,5 +18,7 @@ namespace Entity.Models
         public int ForgetPasswordCode { get; set; }
 
         public int ConfirmCode { get; set; }
+
+        public ICollection<Comments> Comments { get; set; }
     }
 }

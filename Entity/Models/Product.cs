@@ -30,6 +30,8 @@ namespace Entity.Models
 
         public decimal  SalesPrice { get; set; }
 
+        public ICollection<Comments> Comments { get; set; }
+
 
     }
    

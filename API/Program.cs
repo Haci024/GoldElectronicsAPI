@@ -15,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<GoldElectronicsDb>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICategoryDAL, CategoryRepository>();
 
@@ -39,9 +40,20 @@ builder.Services.AddScoped<ISubscriberDAL, SubscriberRepository>();
 builder.Services.AddScoped<IMarkService, MarksManager>();
 builder.Services.AddScoped<IMarksDAL, MarksRepository>();
 
+builder.Services.AddScoped<ICommentService, CommentcManager>();
+builder.Services.AddScoped<ICommentDAL, CommentsRepository>();
+
 builder.Services.AddAutoMapper(typeof(CategoryMapper));
+builder.Services.AddAutoMapper(typeof(CommentMapper));
 builder.Services.AddAutoMapper(typeof(ProductMapper));
+builder.Services.AddAutoMapper(typeof(MarksMapper));
+builder.Services.AddAutoMapper(typeof(ContactUsMapper));
+builder.Services.AddAutoMapper(typeof(ImageListMapper));
+builder.Services.AddAutoMapper(typeof(ProductMapper));
+builder.Services.AddAutoMapper(typeof(SubscriberMapper));
+builder.Services.AddAutoMapper(typeof(SliderMapper));
 builder.Services.AddAutoMapper(typeof(UserMapper));
+builder.Services.AddAutoMapper(typeof(ColorListMapper));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

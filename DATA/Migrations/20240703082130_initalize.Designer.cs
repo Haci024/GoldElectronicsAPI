@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(GoldElectronicsDb))]
-    [Migration("20240630141617_initalize")]
+    [Migration("20240703082130_initalize")]
     partial class initalize
     {
         /// <inheritdoc />
@@ -65,6 +65,9 @@ namespace Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ConfirmCode")
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -174,6 +177,41 @@ namespace Data.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ColorLists");
+                });
+
+            modelBuilder.Entity("Entity.Models.Comments", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<Guid>("AppUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MainCommentId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("MessageDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("MainCommentId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("Entity.Models.ContactUs", b =>
@@ -486,6 +524,31 @@ namespace Data.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Entity.Models.Comments", b =>
+                {
+                    b.HasOne("Entity.Models.AppUser", "AppUser")
+                        .WithMany("Comments")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entity.Models.Comments", "MainComment")
+                        .WithMany("ReplyComments")
+                        .HasForeignKey("MainCommentId");
+
+                    b.HasOne("Entity.Models.Product", "Product")
+                        .WithMany("Comments")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("MainComment");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Entity.Models.ImageList", b =>
                 {
                     b.HasOne("Entity.Models.Product", "Product")
@@ -559,6 +622,11 @@ namespace Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Entity.Models.AppUser", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
             modelBuilder.Entity("Entity.Models.Category", b =>
                 {
                     b.Navigation("ChildCategories");
@@ -566,9 +634,16 @@ namespace Data.Migrations
                     b.Navigation("Products");
                 });
 
+            modelBuilder.Entity("Entity.Models.Comments", b =>
+                {
+                    b.Navigation("ReplyComments");
+                });
+
             modelBuilder.Entity("Entity.Models.Product", b =>
                 {
                     b.Navigation("Colors");
+
+                    b.Navigation("Comments");
 
                     b.Navigation("ProductImages");
                 });
