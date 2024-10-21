@@ -8,6 +8,7 @@ namespace DTO.DTOS.ContactUsDTO
 {
     public class ContactUsListDTO
     {
+        public Guid Id { get; set; }
 
         public string FullName { get; set; }
 

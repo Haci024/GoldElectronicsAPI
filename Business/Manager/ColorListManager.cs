@@ -37,6 +37,11 @@ namespace Business.Manager
             return _dal.GetById(id);
         }
 
+        public ColorList GetById(Guid id)
+        {
+            return _dal.GetById(id);
+        }
+
         public async Task Update(ColorList entity)
         {
             await _dal.Update(entity);

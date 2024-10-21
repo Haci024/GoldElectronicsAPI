@@ -1,0 +1,110 @@
+﻿ @model IEnumerable<ProductListWithCategoryDTO>
+@inject LanguageService language
+
+<style>
+    .slick-prev, .slick-next {
+        display: block !important;
+        color: black;
+    }
+
+    @@media (max-width: 767px) {
+        .slick-prev, .slick-next {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    @@media (max-width: 554px) {
+        .slick-prev, .slick-next {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+</style>
+
+<div class="mb-6">
+    <div class="position-relative">
+        <div class="border-bottom border-color-1 mb-2">
+            <h3 class="section-title mb-0 pb-2 font-size-22">@language.GetKey("Həmçinin baxın")</h3>
+        </div>
+        <div class="js-slick-carousel u-slick position-static overflow-hidden u-slick-overflow-visble pb-7 pt-2 px-1"
+             data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-3 mt-md-0"
+             data-slides-show="6"
+             data-autoplay="true"
+             data-speed="7000"
+             data-slides-scroll="2"
+             data-arrows-classes="position-absolute top-0 font-size-17 u-slick__arrow-normal top-10"
+             data-arrow-left-classes="fa fa-angle-left right-1"
+             data-arrow-right-classes="fa fa-angle-right right-0"
+             data-responsive='[{
+                              "breakpoint": 1400,
+                              "settings": {
+                                "slidesToShow": 7
+                              }
+                            }, {
+                                "breakpoint": 1200,
+                                "settings": {
+                                  "slidesToShow": 4
+                                }
+                            }, {
+                              "breakpoint": 992,
+                              "settings": {
+                                "slidesToShow": 3
+                              }
+                            }, {
+                              "breakpoint": 768,
+                              "settings": {
+                                "slidesToShow": 2
+                              }
+                            }, {
+                              "breakpoint": 554,
+                              "settings": {
+                                "slidesToShow": 2
+                              }
+                            }]'>
+            @foreach (var item in Model)
+            {
+                <div class="col-6 col-md-4 col-xl product-item remove-divider-xl" style="margin-bottom:40px">
+                    <div class="product-item__outer h-100 w-100">
+                        <div class="product-item__inner px-xl-4 p-3">
+                            <div class="product-item__body pb-xl-2">
+                                <div class="mb-2">
+                                    <a href="#" class="font-size-12 text-gray-5">@item.CategoryName</a>
+                                </div>
+                                <h5 class="mb-1 product-item__title">
+                                    <a asp-controller="Shop" asp-action="ProductDetail" asp-route-productId="@item.Id" class="text-blue font-weight-bold">@item.Name</a>
+                                </h5>
+                                <div class="mb-2">
+                                    <a asp-controller="Shop" asp-action="ProductDetail" asp-route-productId="@item.Id" class="d-block text-center">
+                                        <img class="img-fluid" src="@item.ImageUrl" alt="Image Description">
+                                    </a>
+                                </div>
+                                <div class="flex-center-between mb-1">
+                                    <div class="prodcut-price">
+                                        <div class="text-gray-100">@item.Price.ToString("") azn</div>
+                                    </div>
+                                    <div class="d-none d-xl-block prodcut-add-cart">
+                                        <a id="add-to-cart-@item.Id" href="#" class="btn-add-cart btn-primary transition-3d-hover" data-price="@item.Price" data-product-id="@item.Id" onclick="addToCart(this)">
+                                            <i class="ec ec-add-to-cart"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item__footer">
+                                <div class="border-top pt-2 flex-center-between flex-wrap">
+                                    <a href="#" class="font-size-13 btn-compare" style="color:darkgray" data-compare-text="@language.GetKey("Müqayisə")">
+                                        <i class="ec ec-compare mr-1 font-size-15"></i> @language.GetKey("Müqayisə")
+                                    </a>
+                                    <a href="#" class="font-size-13 btn-wishlist" style="color:darkgray" data-wishlist-text="@language.GetKey("Favorit")">
+                                        <i class="ec ec-favorites mr-1 font-size-15"></i>@language.GetKey("Favorit")
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

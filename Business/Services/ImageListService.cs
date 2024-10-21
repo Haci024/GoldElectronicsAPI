@@ -1,4 +1,5 @@
-﻿using Entity.Models;
+﻿using DTO.DTOS.ProductImagesDTO;
+using Entity.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,7 @@ namespace Business.Services
 {
     public interface ImageListService:IGenericService<ImageList>
     {
+        Task<IEnumerable<ImageListDTO>> ImageListByProduct(Guid productId);
+       
     }
 }

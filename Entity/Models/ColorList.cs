@@ -8,6 +8,7 @@ namespace Entity.Models
 {
     public class ColorList
     {
+      
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -16,7 +17,7 @@ namespace Entity.Models
 
         public Product Product { get; set; }
 
-        public int ProductId { get; set; }
+        public Guid ProductId { get; set; }
 
     }
 }

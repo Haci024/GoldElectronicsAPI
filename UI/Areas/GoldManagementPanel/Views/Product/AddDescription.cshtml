@@ -1,0 +1,60 @@
+﻿@model AddDescriptionDTO
+@{
+    ViewData["Title"] = "AddDescription";
+    Layout = "~/Areas/GoldManagementPanel/Views/Shared/_GoldManagementLayout.cshtml";
+}
+
+<div class="content">
+
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-6">
+                <div class="page-title-box">
+
+                    <h4 class="page-title">Qeyd əlavə et</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="input-types-preview">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <form method="post">
+                                            <div class="mb-3">
+                                                <label for="simpleinput" class="form-label">Qeyd</label>
+                                                <input type="text" asp-for="Description" id="simpleinput" name="Description" class="form-control">
+                                                
+                                            </div>
+                                            <div asp-validation-summary="ModelOnly" style="color:darkred"></div>
+                                            <div class="row">
+                                                <div class="text-center">
+                                                    <button class="btn btn-primary" type="submit">Əlavə et</button>
+                                                    <a class="btn btn-success" asp-action="DescriptionList" asp-route-productId="@ViewBag.ProductId">Geri</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+                                </div>
+
+                            </div> <!-- end preview-->
+                            <!-- end preview code-->
+                        </div> <!-- end tab-content-->
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+

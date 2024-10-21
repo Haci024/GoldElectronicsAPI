@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Data.Configurations
 {
-    public class LocalizationConfig : IEntityTypeConfiguration<Localization>
+    public class LocalizationConfig : IEntityTypeConfiguration<Languages>
     {
-        public void Configure(EntityTypeBuilder<Localization> builder)
+        public void Configure(EntityTypeBuilder<Languages> builder)
         {
             builder.HasKey(x => x.Id);
            

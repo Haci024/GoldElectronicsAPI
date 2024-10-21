@@ -8,7 +8,11 @@ namespace Entity.Models
 {
     public class Comments
     {
-        public int Id { get; set; }
+        public Comments()
+        {
+            Id=Guid.NewGuid();
+        }
+        public Guid Id { get; set; }
 
         public AppUser  AppUser { get; set; }
 
@@ -16,17 +20,13 @@ namespace Entity.Models
 
         public Product Product { get; set; }
 
-        public int ProductId { get; set; }
-
-        public Comments MainComment { get; set; }
-
-        public int?  MainCommentId { get; set; }
+        public Guid ProductId { get; set; }
 
         public DateTime MessageDate { get; set; }
 
         public string Content { get; set; }
 
-        public ICollection<Comments> ReplyComments { get; set; }
+        public int Rate { get; set; }
 
         
     }

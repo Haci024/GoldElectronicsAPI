@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DTO.DTOS.CategoryDTO.Child;
+using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +12,11 @@ namespace DTO.DTOS.ProductDTO
     {
         public string Name { get; set; }
 
-        public int CategoryId { get; set; }
+        public Guid CategoryId { get; set; }
 
-        public string Description { get; set; }
+        public Guid MarksId { get; set; }
+    
+        public IFormFile[] ProductImages { get; set; }
 
         public bool Status { get; set; }
 
@@ -21,5 +25,12 @@ namespace DTO.DTOS.ProductDTO
         public bool IsSale { get; set; }
 
         public decimal SalesPrice { get; set; }
+
+        public DateTime LastDateForIsSale { get; set; }
+
+
+
+
+   
     }
 }

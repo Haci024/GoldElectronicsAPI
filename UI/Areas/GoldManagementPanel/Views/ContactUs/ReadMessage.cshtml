@@ -1,0 +1,75 @@
+﻿@model ReadContactUsMessageDTO
+@{
+    ViewData["Title"] = "ReadMessage";
+    Layout = "~/Areas/GoldManagementPanel/Views/Shared/_GoldManagementLayout.cshtml";
+}
+<div class="content">
+
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-6">
+                <div class="page-title-box">
+
+                    <h4 class="page-title">Mesaj detalları</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="input-types-preview">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <form method="post">
+                                            <div class="mb-6">
+                                                <label for="simpleinput" class="form-label">Göndərən</label>
+                                                <input type="text" asp-for="FullName" id="simpleinput" name="FullName" class="form-control" readonly>
+                                            </div>
+                                              <div class="mb-6">
+                                                <label for="simpleinput" class="form-label">Başlıq</label>
+                                                <input type="text" asp-for="Title" id="simpleinput" name="Title" class="form-control" readonly>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="simpleinput" class="form-label">Mesajin mətni</label>
+                                                <textarea type="text" asp-for="Description" id="simpleinput" name="Description" class="form-control" readonly></textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="simpleinput" class="form-label">Elektron ünvan</label>
+                                                <input type="text" asp-for="Email" id="simpleinput" name="Email" class="form-control" readonly>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="simpleinput" class="form-label">Göndərilmə tarixi</label>
+                                                <input type="text" asp-for="SendingDate" id="simpleinput" name="SendingDate" class="form-control" readonly>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="text-center">
+                                                    <button class="btn btn-primary" type="submit">Oxudum</button>
+                                                    <a class="btn btn-success" asp-action="UnReadMessageList">Geri</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+                                </div>
+
+                            </div> <!-- end preview-->
+                            <!-- end preview code-->
+                        </div> <!-- end tab-content-->
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+

@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using API.Tools;
+using AutoMapper;
+using Business.Services;
 using DTO.DTOS.UsersDTO.LoginDTO;
 using DTO.DTOS.UsersDTO.RegisterDTO;
 using Entity.Models;
@@ -14,14 +16,18 @@ namespace API.Controllers
     {
         private readonly SignInManager<AppUser> _signIn;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IEmailService _emailService;
+        private readonly IUserService _userService;
         private readonly IMapper _mapper;
 
-        public AccountController(UserManager<AppUser> userManager,IMapper mapper,SignInManager<AppUser> signIn)
+        public AccountController(UserManager<AppUser> userManager,IUserService users,IMapper mapper,IEmailService serivce,SignInManager<AppUser> signIn)
         {
 
             _userManager = userManager;
             _signIn = signIn;
             _mapper = mapper;
+            _emailService= serivce;
+            _userService = users;
 
 
         }
@@ -34,16 +40,27 @@ namespace API.Controllers
             _mapper.Map(dto, appUser);
             
             IdentityResult result = await _userManager.CreateAsync(appUser, dto.Password);
-            IdentityResult addRole = await _userManager.AddToRoleAsync(appUser, "User");
+           
             if (!result.Succeeded)
             {
                 foreach (var item in result.Errors)
                 {
-                    Ok(item.Description);
+                   return Ok(item.Description);
                 }
+                return BadRequest();
             }
-           return Ok("İstifadəçi uğurla yaradıldı!");
-           
+            else
+            {
+                IdentityResult addRole = await _userManager.AddToRoleAsync(appUser, "Customer");
+                _emailService.ConfirmCodeForNewUser(appUser);
+
+                return Ok("İstifadəçi uğurla yaradıldı!");
+
+            }
+          
+
+
+
         }
         [HttpPost("ConfirmAccount")]
         public async Task<IActionResult> ConfirmAccount(ConfirmMailDTO dto)
@@ -53,19 +70,20 @@ namespace API.Controllers
             {
                 return NotFound("Belə bir elektron ünvan sistemdə mövcud deyil!");
             }
-           _mapper.Map(dto, appUser);
             if (dto.ConfirmCode!=appUser.ConfirmCode)
             {
+
                 return BadRequest("Daxil edilmiş təsdiqləmə kodu yalnışdır!");
             }
-
+            appUser.EmailConfirmed = true;
+            await _userManager.UpdateAsync(appUser);
             return Ok("Hesabınız doğrulandı!");
         }
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginUserDTO dto)
         {
             AppUser appUser = await _userManager.Users.Where(x => x.UserName == dto.EmailOrUserName || x.Email == dto.EmailOrUserName).FirstOrDefaultAsync();
-            if (appUser == null)
+            if (appUser==null)
             {
 
                 return Ok("İstifadəçi tapılmadı");
@@ -73,10 +91,33 @@ namespace API.Controllers
             var SignInResult = await _signIn.CheckPasswordSignInAsync(appUser, dto.Password,false);
             if (!SignInResult.Succeeded)
             {
-                return Ok("Daxil etdiyiniz məlumatlar düzgün deyil!");
+                return BadRequest("Daxil etdiyiniz məlumatlar düzgün deyil!");
+            }
+            else
+            {
+                return Created("",JwtTokenGenerator.GenerateToken(dto));
             }
           
-            return Ok("Girişiniz uğurludur!");
+           
         }
+        [HttpPost("AdminRegister")]
+        public async Task<IActionResult> RegisterForAdmin(NewUserDTO dto)
+        {
+            AppUser appUser = new();
+            _mapper.Map(dto, appUser);
+            appUser.EmailConfirmed=true;
+            IdentityResult result = await _userManager.CreateAsync(appUser, dto.Password);
+            IdentityResult addRole = await _userManager.AddToRoleAsync(appUser, "Admin");
+           
+            if (!result.Succeeded)
+            {
+                foreach (var item in result.Errors)
+                {
+                    Ok(item.Description);
+                }
+            }
+            return Ok("Admin uğurla yaradıldı!");
+        }
+
     }
     }

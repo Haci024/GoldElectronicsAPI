@@ -10,6 +10,13 @@ namespace Data.Services
 {
     public interface ISubscriberDAL:IGenericDAL<Subscriber>
     {
+        Task<Subscriber> GetByEmail(string email);
+
+        Task<int> DailySubscriberCount();
+
+        Task<int> TotalSubscriberCount();
+
+
 
     }
 }

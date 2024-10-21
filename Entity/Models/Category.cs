@@ -8,7 +8,11 @@ namespace Entity.Models
 {
     public class Category
     {
-        public int Id { get; set; }
+        public Category()
+        {
+            Id =Guid.NewGuid();
+        }
+        public Guid Id { get; set; }
 
         public string Name { get; set; }
 
@@ -16,10 +20,17 @@ namespace Entity.Models
 
         public ICollection<Category> ChildCategories { get; set;}
 
-        public int? MainCategoryId { get; set; }
+        public Guid? MainCategoryId { get; set; }
 
         public bool Status { get; set; }
 
+        public string? ImageUrl { get; set; }
+
         public ICollection<Product> Products { get; set; }
+
+        public bool CategoryOrMarks {  get; set; }
+
+       
+
     }
 }

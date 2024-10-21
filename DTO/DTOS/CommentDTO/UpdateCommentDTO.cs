@@ -8,7 +8,7 @@ namespace DTO.DTOS.CommentDTO
 {
     public class UpdateCommentDTO
     {
-        public int CommentId { get; set; }
+        public Guid CommentId { get; set; }
 
         public DateTime MessageDate { get; set; }
 

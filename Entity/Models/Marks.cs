@@ -10,15 +10,16 @@ namespace Entity.Models
 {
     public class Marks
     {
-        public int Id { get; set; }
+        public Marks()
+        {
+            Id= Guid.NewGuid();
+        }
+        public Guid Id { get; set; }
 
-        public string ImageUrl  { get; set; }
-
-
-       
-        [NotMapped]
-        public IFormFile Photo { get; set; }
+        public string Name { get; set; }
 
         public bool Status { get; set; }
+
+        public ICollection<Product> Products { get; set; }
     }
 }

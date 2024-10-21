@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ImageListDTO>
+@{
+    ViewData["Title"] = "ImageList";
+    Layout = "~/Areas/GoldManagementPanel/Views/Shared/_GoldManagementLayout.cshtml";
+    int num = 0;
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <h4 class="page-title">Rəsimlər</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                  
+                    <div class="card-body">
+                        <p class="justify-content-start">
+                            <a id="addImageBtn" asp-controller="Product" asp-action="AddImage" asp-route-productId="@ViewBag.ProductId" class="btn btn-success"><i class="mdi mdi-image-filter-black-white"></i></a>
+                        </p>
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="basic-datatable-preview">
+                                <table id="basic-datatable" class="table table-striped dt-responsive nowrap w-100">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Şəkil</th>
+                                            <th>Status</th>
+                                            <th>Əməliyyatlar</th>
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            
+                                            foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>@(num=num+1)</td>
+                                                    <td><img style="height:100px;width:100px" src="@item.ImageUrl" /></td>
+                                                    <td>
+                                                        @if (item.Status)
+                                                        {
+                                                            <span style="color:forestgreen;font:bold">Aktiv</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span style="color:red;font:bold">Deaktiv</span>
+                                                        }
+                                                    </td>
+                                                    <td>
+                                                        <a asp-controller="Product" asp-action="DeleteImage" asp-route-productId="@item.ProductId" asp-route-imageId="@item.Id" class="btn btn-danger">Sil</a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div> <!-- end preview-->
+                        </div> <!-- end tab-content-->
+                    </div> <!-- end card body-->
+                </div> <!-- end card -->
+            </div><!-- end col-->
+        </div> <!-- end row-->
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var rowCount = document.querySelectorAll("#basic-datatable tbody tr").length;
+        var addImageBtn = document.getElementById("addImageBtn");
+        if (rowCount >= 7) {
+            addImageBtn.style.display = "none";
+        }
+    });
+</script>
+

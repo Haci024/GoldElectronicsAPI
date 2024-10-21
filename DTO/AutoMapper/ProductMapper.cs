@@ -22,6 +22,9 @@ namespace DTO.AutoMapper
             CreateMap<Product, ProductListDTO>();
             CreateMap<ProductListDTO, Product>();
 
+            CreateMap<Product, ProductListByMarksDTO>();
+            CreateMap<ProductListByMarksDTO, Product>();
+
             CreateMap<Product, UpdateProductDTO>();
             CreateMap<UpdateProductDTO, Product>();
 
@@ -31,6 +34,25 @@ namespace DTO.AutoMapper
             CreateMap<Product, ProductCategoryDTO>();
             CreateMap<ProductCategoryDTO, Product>();
 
+          
+
+            CreateMap<Product, IsSaleProductListDTO>();
+            CreateMap<IsSaleProductListDTO, Product>();
+
+            CreateMap<Product, MakeIsSaleProductDTO>();
+            CreateMap<MakeIsSaleProductDTO, Product>();
+
+            CreateMap<Product, AllProductsDTO>();
+            CreateMap<AllProductsDTO, Product>();
+
+            CreateMap<Product, DeactiveProductListDTO>();
+            CreateMap<DeactiveProductListDTO, Product>();
+
+            CreateMap<Product, LastAddedProductsDTO>();
+            CreateMap<LastAddedProductsDTO, Product>();
+
+            CreateMap<Product, ProductDetailDTO>();
+            CreateMap<ProductDetailDTO, Product>();
         }
     }
 }

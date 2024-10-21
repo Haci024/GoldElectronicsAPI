@@ -17,7 +17,6 @@ namespace Data.Configurations
         {
             builder.HasKey(x=>x.Id);
             builder.HasOne(x=>x.AppUser).WithMany(x=>x.Comments).HasForeignKey(x=>x.ProductId);
-            builder.HasMany(x => x.ReplyComments).WithOne(x => x.MainComment).HasForeignKey(x => x.MainCommentId);
             builder.HasOne(x => x.Product).WithMany(x => x.Comments).HasForeignKey(x => x.ProductId);
         }
     }

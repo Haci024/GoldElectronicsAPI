@@ -8,7 +8,14 @@ namespace DTO.DTOS.CategoryDTO.Main
 {
     public class ChildCategoryListByMainDTO
     {
-        public int MainCategoryId { get; set; }
+        public Guid Id { get; set; }
+
+        public bool Status { get; set; }
+
+        public string Name { get; set; }
+
+
+        public Guid mainCategoryId { get; set; }
 
 
     }

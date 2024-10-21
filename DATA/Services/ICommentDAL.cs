@@ -1,4 +1,5 @@
 ﻿using Data.Repositories;
+using DTO.DTOS.CommentDTO;
 using Entity.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace Data.Services
 {
     public interface ICommentDAL:IGenericDAL<Comments>
     {
-        Task<IQueryable<Comments>> CommentListByProduct(int ProductId);
+        Task<IQueryable<Comments>> CommentListByProduct(Guid ProductId);
+
+        Task<CommentRatedPercentDTO> GetCommentRatedPercent(Guid ProductId);
     }
 }

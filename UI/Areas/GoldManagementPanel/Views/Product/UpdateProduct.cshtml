@@ -1,0 +1,68 @@
+﻿@model UpdateProductDTO
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Areas/GoldManagementPanel/Views/Shared/_GoldManagementLayout.cshtml";
+}
+
+<div class="content">
+    <!-- Start Content-->
+    <div class="container-fluid">
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-6">
+                <div class="page-title-box">
+                    <h4 class="page-title">Məhsul məlumatlarını dəyiş</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="input-types-preview">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <form method="post" enctype="multipart/form-data">
+                                            <div class="mb-3">
+                                                <label for="example-select" class="form-label">Üst kateqoriya</label>
+                                                <select class="form-control select2" data-toggle="select2" id="example-select" asp-for="CategoryId" name="CategoryId">
+                                                    @foreach (var item in Model.ThirdLevelCategories)
+                                                    {
+                                                        <option value="@item.Id">@item.MainCategoryName ---------- @item.Name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="simpleinput" class="form-label">Məhsulun adı</label>
+                                                <input type="text" asp-for="Name" id="simpleinput" name="Name" class="form-control">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="simpleinput" class="form-label">Qiymət</label>
+                                                <input type="number" asp-for="Price" id="simpleinput" name="Price" min="0" class="form-control" step="0.01">
+                                            </div>
+                                            
+                                         
+                                            <div style="color:darkred" asp-validation-summary="ModelOnly"></div>
+                                            <div class="row">
+                                                <div class="text-center">
+                                                    <button class="btn btn-primary" type="submit">Yenilə</button>
+                                                    <a class="btn btn-success" asp-controller="Product" asp-action="AllProducts">Geri</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                </div>
+                                <!-- end row-->
+                            </div> <!-- end preview-->
+                            <!-- end preview code-->
+                        </div> <!-- end tab-content-->
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div> <!-- container -->
+</div> <!-- content -->
+

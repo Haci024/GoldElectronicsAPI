@@ -1,0 +1,65 @@
+﻿@model LoginDTO
+@inject LanguageService language
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="mb-4">
+        <h1 class="text-center">@language.GetKey("Hesab")</h1>
+    </div>
+    <div class="my-4 my-xl-8">
+        <div class="row">
+            <div class="col-md-3 ml-xl-auto mr-md-auto mr-xl-0 mb-8 mb-md-0">
+
+            </div>
+            <div class="col-md-6 ml-xl-auto mr-md-auto mr-xl-0 mb-8 mb-md-0">
+                <!-- Title -->
+                <div class="border-bottom border-color-1 mb-6">
+                    <h3 class="d-inline-block section-title mb-0 pb-2 font-size-26">@language.GetKey("Daxil ol")</h3>
+                </div>
+                <p class="text-gray-90 mb-4">Welcome back! Sign in to your account.</p>
+                <!-- End Title -->
+                <form class="js-validate" novalidate="novalidate" method="post">
+                    <!-- Form Group -->
+                    <div class="js-form-message form-group">
+                        <label class="form-label" for="signinSrEmailExample3">
+                           @language.GetKey("Elektron ünvan və ya İstifadəçi adı")
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="email" class="form-control" asp-for="EmailOrUserName" name="EmailOrUserName" id="signinSrEmailExample3" placeholder="@language.GetKey("İstifadəçi adı və ya elektron ünvan...")" aria-label="Username or Email address" required
+                               data-msg="@language.GetKey("Zəhmət olmasa düzgün elektron ünvanı düzgün formatda qeyd edin")"
+                               data-error-class="u-has-error"
+                               data-success-class="u-has-success">
+                    </div>
+                    <!-- End Form Group -->
+                    <!-- Form Group -->
+                    <div class="js-form-message form-group">
+                        <label class="form-label"  for="signinSrPasswordExample2">@language.GetKey("Şifrə") <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" asp-for="Password" name="Password" id="signinSrPasswordExample2" placeholder="@language.GetKey("Şifrənizi daxil edin...")" aria-label="Password" required
+                               
+                               data-error-class="u-has-error"
+                               data-success-class="u-has-success">
+                    </div>
+                    <!-- End Form Group -->
+                   
+                    
+
+                    <div class="mb-1">
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary-dark-w px-5">@language.GetKey("Göndər")</button>
+                        </div>
+                        <div class="mb-2">
+                            <a class="text-blue" href="#">@language.GetKey("Şifrəni unutmusan?")</a>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-md-3 ml-xl-auto mr-md-auto mr-xl-0 mb-8 mb-md-0">
+            </div>
+            
+        </div>
+    </div>
+</div>

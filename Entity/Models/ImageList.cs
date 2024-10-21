@@ -10,17 +10,20 @@ namespace Entity.Models
 {
     public class ImageList
     {
-        public int Id { get; set; }
+        public ImageList()
+        {
+            Id = Guid.NewGuid();
+        }
+        public Guid Id { get; set; }
 
         public string ImageUrl { get; set; }
-      
-        [NotMapped]
-        public IFormFile Photo { get; set; }
 
+        public string SavedFileUrl { get; set; }    
+      
         public bool Status {  get; set; }
 
         public Product Product { get; set; }
 
-        public int ProductId { get; set; }
+        public Guid ProductId { get; set; }
     }
 }

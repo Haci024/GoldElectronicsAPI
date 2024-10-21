@@ -1,32 +1,43 @@
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using UI.Models;
 
 namespace UI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        
+        private string GetCurrentCulture()
         {
-            _logger = logger;
+            
+            return HttpContext.Session.GetString("CurrentCulture")?? "az-AZ";
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
+          
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Index2()
+        {
+
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult ChangeLanguage(string culture)
         {
-            return View();
+            Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions() { Expires = DateTimeOffset.UtcNow.AddYears(1) });
+            
+
+            return Redirect(Request.Headers["Referer"].ToString());
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+      
+      
+
     }
 }

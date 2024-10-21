@@ -14,7 +14,7 @@ namespace DTO.AutoMapper
         public CommentMapper()
         {
             CreateMap<Comments, NewCommentDTO>();
-            CreateMap<NewCommentDTO, Comments>();
+            CreateMap<NewCommentDTO, Comments>().ForMember(dest => dest.MessageDate, opt => opt.MapFrom(src => DateTime.UtcNow));
 
             CreateMap<Comments, ReplyCommentDTO>();
             CreateMap<ReplyCommentDTO, Comments>();

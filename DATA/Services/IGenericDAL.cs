@@ -10,8 +10,8 @@ namespace Data.Repositories
     {
         Task<IQueryable<T>> GetAll();
         
-        T GetById(int id); 
-
+        T GetById(int id);
+        T GetById(Guid id);
         Task Create(T entity);
         Task Update(T entity);
         Task Delete(T entity);

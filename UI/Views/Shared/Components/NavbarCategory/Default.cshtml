@@ -1,0 +1,96 @@
+﻿@model IEnumerable<NavbarCategoryDTO>
+@inject LanguageService language
+
+
+<div id="basicsAccordion">
+    <!-- Card -->
+    <div class="card border-0 rounded-0">
+        <div class="card-header bg-primary rounded-0 card-collapse border-0" id="basicsHeadingOne">
+            <button type="button" class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
+                    data-toggle="collapse"
+                    data-target="#basicsCollapseOne"
+                    aria-expanded="true"
+                    aria-controls="basicsCollapseOne">
+                <span class="pl-1 text-gray-90">@language.GetKey("Kateqoriyalar")</span>
+                <span class="text-gray-90 ml-3">
+                    <span class="ec ec-arrow-down-search"></span>
+                </span>
+            </button>
+        </div>
+        <div id="basicsCollapseOne" class="collapse show vertical-menu v1"
+             aria-labelledby="basicsHeadingOne"
+             data-parent="#basicsAccordion">
+            <div class="card-body p-0">
+                <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
+                    <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+                        <ul class="navbar-nav u-header__navbar-nav border-primary border-top-0">
+                            @foreach (var mainCategories in Model)
+                            {
+                                
+                                <li class="nav-item hs-has-mega-menu u-header__nav-item"
+                                    data-event="hover"
+                                    data-animation-in="slideInUp"
+                                    data-animation-out="fadeOut"
+                                    data-position="left">
+                                    @if (mainCategories.MainCategoryId==null)
+                                    {
+                                        <a id="basicMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false"><img src="~/icons/@mainCategories.ImageUrl" style="width:25px;height:25px"/>@language.GetKey(mainCategories.CategoryName)</a>
+                                       
+                                    }
+                                    <div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu">
+                                           <div class="vmm-bg">
+                                         <img class="img-fluid" src="~/ui/assets/img/500X400/@mainCategories.ImageUrl" alt="Image Description">
+                                          </div>
+                                       
+                                                 <div class="row u-header__mega-menu-wrapper">
+                                                   @foreach (var childCategories in mainCategories.ChildCategories)
+                                                    {
+                                                      <div class="col mb-3 mb-sm-0">
+                                                       <span class="u-header__sub-menu-title">@language.GetKey(childCategories.Name)</span>
+                                                        <ul class="u-header__sub-menu-nav-group mb-3">
+                                                        @if (childCategories.CategoryOrMarks)
+                                                        {
+                                                            @foreach (var marks in childCategories.MarkList)
+                                                            {
+                                                                <li><a class="nav-link u-header__sub-menu-nav-link" href="#">@marks.Name (@marks.ProductCount)</a></li>
+
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            @foreach (var category in childCategories.ThirdLevelCategory)
+                                                            {
+                                                                <li><a class="nav-link u-header__sub-menu-nav-link" href="#">@category.Name (@category.ProductCount)</a></li>
+
+                                                            }
+                                                        }
+
+                                                        
+                                                         
+                                                         </ul>
+            
+                                                      
+                                                       </div>
+              
+                                                   
+                                                    }
+                                               
+                                                </div>
+                                    
+                                    </div> 
+
+
+                                 
+                                   
+                                </li>
+
+                              
+                            }
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+   
+</div>

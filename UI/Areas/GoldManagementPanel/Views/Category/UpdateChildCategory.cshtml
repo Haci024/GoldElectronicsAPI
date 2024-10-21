@@ -1,0 +1,82 @@
+﻿@model UpdateChildCategoryDTO
+@{
+    ViewData["Title"] = "UpdateChildCategory";
+    Layout = "~/Areas/GoldManagementPanel/Views/Shared/_GoldManagementLayout.cshtml";
+}
+
+<div class="content">
+
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-6">
+                <div class="page-title-box">
+
+                    <h4 class="page-title">Kateqoriya məlumatlarını yenilə</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+
+
+
+
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="input-types-preview">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <form method="post">
+                                            <div class="mb-3">
+                                                <label for="example-select" class="form-label">Üst kateqoriya</label>
+                                                <select class="form-select" id="example-select" asp-for="MainCategoryId">
+                                                    @foreach (var item in Model.MainCategoryList)
+                                                    {
+                                                        <option value="@item.Id" selected>@item.Name</option>
+                                                    }
+
+
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="simpleinput" class="form-label">Kateqoriyanın adı</label>
+                                                <input type="text" asp-for="Name" id="simpleinput" name="Name" class="form-control">
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="text-center">
+
+                                                    <button class="btn btn-primary" type="submit">Əlavə et</button>
+                                                    <a class="btn btn-success" asp-action="ChildCategoryLIst">Geri</a>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                        </form>
+                                    </div> <!-- end col -->
+
+
+                                </div>
+                                <!-- end row-->
+                            </div> <!-- end preview-->
+                            <!-- end preview code-->
+                        </div> <!-- end tab-content-->
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+
+
+    </div> <!-- container -->
+
+</div> <!-- content -->
+

@@ -1,0 +1,41 @@
+﻿@inject LanguageService languageService
+@{
+    int productId = ViewBag.ProductId;
+}
+<form  method="post" class="js-validate">
+    <div class="row align-items-center mb-4">
+        <div class="col-md-4 col-lg-3">
+            <label for="rating" class="form-label mb-0">@languageService.GetKey("Dəyərləndir")</label>
+        </div>
+        <div class="col-md-8 col-lg-9">
+            <input type="hidden" id="rating" name="Rating" value="0">
+            <a  class="d-block" id="starRating">
+                <div class="text-warning text-ls-n2 font-size-16">
+                    <small class="far fa-star" data-value="1"></small>
+                    <small class="far fa-star" data-value="2"></small>
+                    <small class="far fa-star" data-value="3"></small>
+                    <small class="far fa-star" data-value="4"></small>
+                    <small class="far fa-star" data-value="5"></small>
+                </div>
+            </a>
+        </div>
+    </div>
+    <input type="hidden" id="productId" name="productId" value="@productId">
+    <div class="js-form-message form-group mb-3 row">
+        <div class="col-md-4 col-lg-3">
+            <label for="descriptionTextarea" class="form-label">@languageService.GetKey("Təsuratlarını başqaları ilə bölüş...")</label>
+        </div>
+        <div class="col-md-8 col-lg-9">
+            <textarea id="customerReview" class="form-control" rows="4" id="descriptionTextarea" name="Description"
+                      data-msg="@languageService.GetKey("Zəhmət olmasa rəy bildirin...")"
+                      data-error-class="u-has-error"
+                      data-success-class="u-has-success"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-md-4 offset-lg-3 col-auto">
+            <a href="#" class="btn btn-primary-dark btn-wide transition-3d-hover" id="submitComment">@languageService.GetKey("Göndər!")</a>
+        </div>
+    </div>
+</form>
+<script src="~/ui/assets/js/components/customerreview.js"></script> 

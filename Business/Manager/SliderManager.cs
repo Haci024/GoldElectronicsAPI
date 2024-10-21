@@ -48,6 +48,11 @@ namespace Business.Manager
             return _dal.GetById(id);
         }
 
+        public Slider GetById(Guid id)
+        {
+            return _dal.GetById(id);
+        }
+
         public async Task Update(Slider entity)
         {
            await _dal.Update(entity);

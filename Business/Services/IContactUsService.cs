@@ -9,6 +9,12 @@ namespace Business.Services
 {
     public interface IContactUsService:IGenericService<ContactUs>
     {
+        Task<IQueryable<ContactUs>> UnReadMessageList();
 
+        Task<IQueryable<ContactUs>> ReadMessageList();
+
+        Task<int> ReadMessageCount();
+
+        Task<int> UnReadReadMessageCount();
     }
 }

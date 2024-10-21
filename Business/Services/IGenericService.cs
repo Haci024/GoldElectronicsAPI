@@ -10,6 +10,7 @@ namespace Business.Services
     public interface IGenericService<T> where T : class
     {
         T GetById(int id);
+        T GetById(Guid id);
         Task<IQueryable<T>> GetAll();
         Task Create(T entity);
         Task Update(T entity);

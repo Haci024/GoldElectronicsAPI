@@ -38,7 +38,10 @@ namespace Data.Repositories
         {
             return  _db.Set<T>().Find(id);
         }
-
+        public T GetById(Guid id)
+        {
+            return _db.Set<T>().Find(id);
+        }
         public async Task Update(T entity)
         {
             _db.Set<T>();

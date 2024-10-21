@@ -8,11 +8,11 @@ namespace DTO.DTOS.CategoryDTO.Child
 {
     public class UpdateChildCategoryDTO
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string Name { get; set; }
 
-        public int? MainCategoryId { get; set; }
+        public Guid? MainCategoryId { get; set; }
 
         public bool Status { get; set; }
 

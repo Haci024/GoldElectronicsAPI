@@ -1,5 +1,7 @@
-﻿using Business.Services;
+﻿using AutoMapper;
+using Business.Services;
 using Data.Services;
+using DTO.DTOS.MarksDTO;
 using Entity.Models;
 using System;
 using System.Collections.Generic;
@@ -12,9 +14,11 @@ namespace Business.Manager
     public class MarksManager : IMarkService
     {
         private readonly IMarksDAL _dal;
-        public MarksManager(IMarksDAL dal)
+        private readonly IMapper _mapper;
+        public MarksManager(IMarksDAL dal,IMapper mapper)
         {
             _dal = dal;
+            _mapper = mapper;
         }
         public async Task Create(Marks entity)
         {
@@ -36,9 +40,24 @@ namespace Business.Manager
             return _dal.GetById(id);
         }
 
+       
+        public async Task<IEnumerable<MarkListDTO>> DeactiveMarkList()
+        {
+            return _mapper.Map<IEnumerable<MarkListDTO>>(await _dal.DeactiveMarkList());
+        }
+        public async Task<IEnumerable<MarkListDTO>> ActiveMarkList()
+        {
+            return _mapper.Map<IEnumerable<MarkListDTO>>(await _dal.ActiveMarkList());
+        }
+
         public async Task Update(Marks entity)
         {
             await _dal.Update(entity);
+        }
+
+        public Marks GetById(Guid id)
+        {
+            return _dal.GetById(id);
         }
     }
 }

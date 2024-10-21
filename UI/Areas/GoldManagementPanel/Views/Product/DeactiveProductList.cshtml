@@ -1,0 +1,108 @@
+﻿@model IEnumerable<DeactiveProductListDTO>
+@{
+    ViewData["Title"] = "DeactiveProductList";
+    Layout = "~/Areas/GoldManagementPanel/Views/Shared/_GoldManagementLayout.cshtml";
+    int num = 0;
+}
+
+
+
+<style>
+    i {
+        font-size: 18px;
+    }
+</style>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+
+                    <h4 class="page-title">Deaktiv məhsullar</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="basic-datatable-preview">
+                                <table id="basic-datatable" class="table table-striped dt-responsive nowrap w-100">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Ad</th>
+                                            <th>Marka</th>
+                                            <th>Qiymət</th>
+                                            <th>Status</th>
+                                            <th>Əməliyyatlar</th>
+
+                                        </tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@(num = num + 1)</td>
+                                                <td>@item.Name</td>
+                                                <td>@item.MarksName</td>
+                                                <td>@item.Price</td>
+                                                <td>
+                                                    @if (item.Status)
+                                                    {
+                                                        <span style="color:forestgreen;font-weight:bold">Aktiv</span>
+                                                       
+                                                    }
+                                                    else
+                                                    {
+                                                        <span style="color:darkred;font-weight:bold">Deaktiv</span>
+                                                    }
+                                                </td>
+                                         
+
+                                                <td>
+                                                    <a asp-action="ProductDetail" asp-route-productId="@item.Id" type="button" class="btn btn-warning"><i class="mdi mdi-eye"></i></a>
+                                                    <a asp-action="UpdateProduct" asp-route-productId="@item.Id" type="button" class="btn btn-info"> <i class=" mdi mdi-pencil"></i></a>
+                                                    <a asp-action="DescriptionList" asp-route-productId="@item.Id" type="button" class="btn btn-secondary"> <i class="uil uil-list-ul"></i></a>
+                                                    <a asp-action="ImageList" asp-route-productId="@item.Id" class="btn btn-danger">
+                                                        <i class=" mdi mdi-image-multiple"></i>
+                                                    </a>
+                                                    <a asp-action="MakeIsSale" asp-route-productId="@item.Id" class="btn btn-success">
+                                                        <i class=" mdi mdi-sale"></i>
+                                                    </a>
+
+
+
+                                                    @* <a type="button" class="btn btn-secondary">Secondary</a>
+                                                <a type="button" class="btn btn-success">Success</a>
+                                                <a type="button" class="btn btn-danger">Danger</a>
+                                                <a type="button" class="btn btn-warning">Warning</a>
+                                                <a type="button" class="btn btn-info">Info</a>
+                                                <a type="button" class="btn btn-light">Light</a>
+                                                <a type="button" class="btn btn-dark">Dark</a>
+                                                <a type="button" class="btn btn-link">Link</a> *@
+                                                </td>
+
+                                            </tr>
+
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                            </div> <!-- end preview-->
+
+
+                        </div> <!-- end tab-content-->
+
+                    </div> <!-- end card body-->
+                </div> <!-- end card -->
+            </div><!-- end col-->
+        </div> <!-- end row-->
+    </div>
+
+</div>

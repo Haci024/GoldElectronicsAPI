@@ -1,0 +1,26 @@
+﻿<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#CvSideBar" aria-expanded="false" aria-controls="CvSideBar" class="side-nav-link">
+        <i class="uil-envelope"></i>
+        <span>İşə qəbul  müraciətləri
+            <span class="menu-arrow"></span>
+        </span>
+    </a>
+    <div class="collapse" id="CvSideBar">
+        <ul class="side-nav-second-level">
+            <li>
+                <a asp-controller="CvAndCareer" asp-action="UnViewedCvList">Baxılmamış CV-lər
+
+                    <span class="badge bg-danger float-end" id="unViewedCvList"></span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="CvAndCareer" asp-action="ViewedCvList">Baxılmış CV-lər
+
+                    <span class="badge bg-success float-end" id="ViewedCvList"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</li>
+
+

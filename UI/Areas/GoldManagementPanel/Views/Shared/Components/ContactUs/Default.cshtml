@@ -1,0 +1,34 @@
+﻿@model MessageCountDTO
+<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
+        <i class="uil-envelope"></i>
+        <span>Elektron məktublar</span>
+        @if (Model.UnReadMessageCount==0)
+        {
+            <span class="menu-arrow"></span>
+        }
+        else
+        {
+            <span class="badge bg-danger float-end">@Model.UnReadMessageCount</span>
+        }
+
+    </a>
+    <div class="collapse" id="sidebarEmail">
+        <ul class="side-nav-second-level">
+            <li>
+                <a asp-controller="ContactUs" asp-action="UnReadMessageList">Oxunmamışlar
+
+                    <span class="badge bg-danger float-end" id="unReadMessages">@Model.UnReadMessageCount</span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="ContactUs" asp-action="ReadMessageList">Oxunanlar
+
+                    <span class="badge bg-success float-end">@Model.ReadMessaageCount</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</li>
+
+

@@ -1,0 +1,37 @@
+﻿@model ProductCountDTO
+<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#productPanel" aria-expanded="false" aria-controls="productPanel" class="side-nav-link">
+        <i class="mdi mdi-basket"></i>
+        <span>Məhsullar </span>
+        <span class="badge bg-success float-end">@Model.TotalProductCount</span>
+    </a>
+    <div class="collapse" id="productPanel">
+        <ul class="side-nav-second-level">
+            <li>
+                <a asp-controller="Product" asp-action="NewProduct">
+                   
+                    Yeni Məhsul
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Product" asp-action="AllProducts">
+                    Bütün məhsullar
+                    <span class="badge bg-primary float-end">@Model.SimpleProductCount</span>
+                    </a>
+            </li>
+            <li>
+                <a asp-controller="Product" asp-action="IsSaleProductList">
+                    Endrimdə olanlar
+                    <span class="badge bg-primary float-end">@Model.IsSaleProductCount</span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Product" asp-action="DeactiveProductList">
+                  
+                    <span class="badge bg-danger float-end">@Model.DeactiveProductCount</span>
+                    Deaktiv məhsullar</a>
+            </li>
+
+        </ul>
+    </div>
+</li>

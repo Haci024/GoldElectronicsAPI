@@ -1,0 +1,41 @@
+﻿@model CategoryCountDTO
+<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
+        <i class="uil-store"></i>
+        <span>Kateqoriyalar </span>
+        <span class="badge bg-success float-end">@Model.TotalCategoryCount</span>
+    </a>
+    <div class="collapse" id="sidebarEcommerce">
+        <ul class="side-nav-second-level">
+            <li>
+                <a asp-controller="Category" asp-action="NewChildCategory">
+                   
+                    Yeni alt kateqoriya
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Category" asp-action="MainCategoryList">
+                    <span class="badge bg-warning float-end">@Model.MainCategoryCount</span>
+                    Üst kateqoriyalar</a>
+            </li>
+            <li>
+                <a asp-controller="Category" asp-action="ChildCategoryList">
+                    <span class="badge bg-primary float-end">@Model.ChildCategoryCount</span>
+                    Alt kateqoriyalar
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Category" asp-action="ThirdLevelCategoryList">
+                    <span class="badge bg-primary float-end">@Model.ProductCategoryCount</span>
+                    Məhsul kateqoriyaları
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Category" asp-action="DeactiveCategoryList">
+                    <span class="badge bg-danger float-end">@Model.DeactiveCategoryCount</span>
+                    Deaktiv kateqoriyalar</a>
+            </li>
+
+        </ul>
+    </div>
+</li>

@@ -15,7 +15,7 @@ namespace Data.Configurations
         public void Configure(EntityTypeBuilder<ColorList> builder)
         {
             builder.HasKey(x=> x.Id);   
-            builder.HasOne(x=>x.Product).WithMany(x=>x.Colors).HasForeignKey(x=>x.Id);
+            builder.HasOne(x=>x.Product).WithMany(x=>x.Colors).HasForeignKey(x=>x.ProductId);
             
         }
     }

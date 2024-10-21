@@ -1,4 +1,5 @@
 ﻿using Data.Repositories;
+using DTO.DTOS.ProductImagesDTO;
 using Entity.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,6 @@ namespace Data.Services
 {
     public interface ImageListDAL:IGenericDAL<ImageList>
     {
-
+        Task<IQueryable<ImageListDTO>> ImageListByProduct(Guid productId);
     }
 }

@@ -8,10 +8,19 @@ namespace DTO.DTOS.CategoryDTO.Child
 {
     public class NewChildCategoryDTO
     {
+        public NewChildCategoryDTO()
+        {
+            ImageUrl= string.Empty;
+            CategoryOrMarks = false;
+        }
         public string Name { get; set; }
 
         public bool Status { get; set; }
 
-        public int MainCategoryId { get; set; }
+        public bool CategoryOrMarks { get; set; }
+
+        public string ImageUrl { get; set; }
+
+        public Guid MainCategoryId { get; set; }
     }
 }

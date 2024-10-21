@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "DATA\Data.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{6872614D-57FA-44B0-B474-D60D0BEB599F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{E6057DAB-FC99-481F-AC80-BF5B0514CF6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "DTO\DTO.csproj", "{E6057DAB-FC99-481F-AC80-BF5B0514CF6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "UI\UI.csproj", "{D7301E95-ED11-4416-805B-C07149393F1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E6057DAB-FC99-481F-AC80-BF5B0514CF6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6057DAB-FC99-481F-AC80-BF5B0514CF6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6057DAB-FC99-481F-AC80-BF5B0514CF6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7301E95-ED11-4416-805B-C07149393F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7301E95-ED11-4416-805B-C07149393F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7301E95-ED11-4416-805B-C07149393F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7301E95-ED11-4416-805B-C07149393F1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

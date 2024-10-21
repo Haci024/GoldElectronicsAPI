@@ -1,0 +1,70 @@
+﻿@model IEnumerable<CvListDTO>
+@{
+    ViewData["Title"] = "UnViewedCvList";
+    Layout = "~/Areas/GoldManagementPanel/Views/Shared/_GoldManagementLayout.cshtml";
+    int num = 0;
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <h4 class="page-title">Baxılmamış CV-lər</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="basic-datatable-preview">
+                                <table id="basic-datatable" class="table table-striped dt-responsive nowrap w-100">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th> Göndərilmə Tarixi</th>
+                                            <th>İşin növü</th>
+                                            <th>Elektron ünvan</th>
+                                            <th>Fayl</th>
+                                            <th>Əməliyyatlar</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@(num = num + 1)</td>
+                                                <td>@item.SendingDate.ToString("dd.MM.yyyyy")</td>
+                                                <td>@item.WorkType</td>
+                                                <td>@item.Email</td>
+                                                
+
+                                                <td>
+                                                    <a asp-action="ViewCV" asp-route-Id="@item.Id" class="btn btn-primary">Baxıldı</a>
+                                                </td>
+                                                <td>
+                                                   <a href="@item.FileUrl"  download class="btn btn-primary">Yüklə</a>
+                                                </td>
+                                            </tr>
+
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                            </div> <!-- end preview-->
+
+
+                        </div> <!-- end tab-content-->
+
+                    </div> <!-- end card body-->
+                </div> <!-- end card -->
+            </div><!-- end col-->
+        </div> <!-- end row-->
+    </div>
+
+</div>
+

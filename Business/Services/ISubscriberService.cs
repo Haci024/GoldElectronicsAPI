@@ -9,5 +9,10 @@ namespace Business.Services
 {
     public interface ISubscriberService:IGenericService<Subscriber>
     {
+        Task<Subscriber> GetByEmail(string email);
+
+        Task<int> DailySubscriberCount();
+
+        Task<int> TotalSubscriberCount();
     }
 }

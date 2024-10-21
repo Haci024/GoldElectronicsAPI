@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO.DTOS.CategoryDTO.Child;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,20 +9,11 @@ namespace DTO.DTOS.ProductDTO
 {
     public class UpdateProductDTO
     {
-        public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public int CategoryId { get; set; }
-
-        public string Description { get; set; }
-
-        public bool Status { get; set; }
+        public Guid CategoryId { get; set; }
 
         public decimal Price { get; set; }
-
-        public bool IsSale { get; set; }
-
-        public decimal SalesPrice { get; set; }
     }
 }

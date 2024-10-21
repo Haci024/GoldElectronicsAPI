@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ChildCategoryListByMainDTO>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/GoldManagementPanel/Views/Shared/_GoldManagementLayout.cshtml";
+    int num = 0;
+}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+
+                    <h4 class="page-title">@ViewBag.CategoryName - Məhsullar</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="basic-datatable-preview">
+                                <table id="basic-datatable" class="table table-striped dt-responsive nowrap w-100">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Ad</th>
+                                            <th>Status</th>
+                                            <th>Əməliyyatlar</th>
+
+                                        </tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@(num = num + 1)</td>
+                                                <td>@item.Name</td>
+                                                <td>
+                                                    @if (item.Status)
+                                                    {
+                                                        <span style="color:forestgreen;font:bold">Aktiv</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span style="color:red;font:bold">Deaktiv</span>
+                                                    }
+                                                </td>
+                                                <td>
+                                                    <a asp-controller="Product" asp-action="ProductListWithCategory" asp-route-categoryId="@item.Id" class="btn btn-primary ">Məhsullar</a>
+                                                    <a  asp-controller="Marks" asp-action="MarkListByCategory" asp-route-categoryId="@item.Id" class="btn btn-warning ">Markalar</a>
+                                                </td>
+
+                                            </tr>
+
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                            </div> <!-- end preview-->
+
+
+                        </div> <!-- end tab-content-->
+
+                    </div> <!-- end card body-->
+                </div> <!-- end card -->
+            </div><!-- end col-->
+        </div> <!-- end row-->
+    </div>
+
+</div>
+
+ 

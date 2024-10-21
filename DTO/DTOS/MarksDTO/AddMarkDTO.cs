@@ -8,6 +8,12 @@ namespace DTO.DTOS.MarksDTO
 {
     public class AddMarkDTO
     {
-        public string  ImageUrl { get; set; }
+     
+      
+        public string Name { get;set; }
+
+        public bool Status { get;set; }
+
+
     }
 }

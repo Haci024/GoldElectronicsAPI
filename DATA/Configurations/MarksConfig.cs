@@ -14,6 +14,8 @@ namespace Data.Configurations
         public void Configure(EntityTypeBuilder<Marks> builder)
         {
            builder.HasKey(x => x.Id);
+           builder.HasMany(x=>x.Products).WithOne(x=>x.Marks).HasForeignKey(x=>x.MarksId);
+          
            
         }
     }

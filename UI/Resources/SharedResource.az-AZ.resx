@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="...və" xml:space="preserve">
+    <value>...və</value>
+  </data>
+  <data name="365 gün" xml:space="preserve">
+    <value>365 gün</value>
+  </data>
+  <data name="50 azn-dən" xml:space="preserve">
+    <value>50 azn-dən</value>
+  </data>
+  <data name="Abunə ol" xml:space="preserve">
+    <value>Abunə ol</value>
+  </data>
+  <data name="Abunə olan zaman 25 manat kuponun aktivləşdiyini necə bilə bilərəm?" xml:space="preserve">
+    <value>Abunə olan zaman 25 manat kuponun aktivləşdiyini necə bilə bilərəm?</value>
+  </data>
+  <data name="Abunə olmaqla ilk  alış-verişinizdə Odissey Electronics-dən  25 manatlıq kupon qazanırsınız.Daha ətraflı..." xml:space="preserve">
+    <value>Abunə olmaqla ilk  alış-verişinizdə Odissey Electronics-dən  25 manatlıq kupon qazanırsınız.Daha ətraflı...</value>
+  </data>
+  <data name="Ad və Soyad" xml:space="preserve">
+    <value>Ad və Soyad</value>
+  </data>
+  <data name="Aksesuarlar" xml:space="preserve">
+    <value>Aksesuarlar</value>
+  </data>
+  <data name="Audio səs" xml:space="preserve">
+    <value>Audio səs</value>
+  </data>
+  <data name="Başlıq" xml:space="preserve">
+    <value>Başlıq</value>
+  </data>
+  <data name="Bizimlə əlaqə" xml:space="preserve">
+    <value>Bizimlə əlaqə</value>
+  </data>
+  <data name="Brend Məhsullar" xml:space="preserve">
+    <value>Brend Məhsullar</value>
+  </data>
+  <data name="Bəyənilənlər" xml:space="preserve">
+    <value>Bəyənilənlər</value>
+  </data>
+  <data name="Daxil ol" xml:space="preserve">
+    <value>Daxil ol</value>
+  </data>
+  <data name="Digər səhifələr" xml:space="preserve">
+    <value>Digər səhifələr</value>
+  </data>
+  <data name="Dil" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="Dronlar" xml:space="preserve">
+    <value>Dronlar</value>
+  </data>
+  <data name="DSLR Kamera" xml:space="preserve">
+    <value>DSLR Kamera</value>
+  </data>
+  <data name="Elektron ünvan" xml:space="preserve">
+    <value>Elektron ünvan</value>
+  </data>
+  <data name="Elektron ünvan və ya İstifadəçi adı" xml:space="preserve">
+    <value>Elektron ünvan və ya İstifadəçi adı</value>
+  </data>
+  <data name="Elektron ünvan..." xml:space="preserve">
+    <value>Elektron ünvan...</value>
+  </data>
+  <data name="Elektron ünvanla abunə ol" xml:space="preserve">
+    <value>Elektron ünvanla abunə ol</value>
+  </data>
+  <data name="Endirimdə olanlar" xml:space="preserve">
+    <value>Endirimdə olanlar</value>
+  </data>
+  <data name="Favorit" xml:space="preserve">
+    <value>Favorit</value>
+  </data>
+  <data name="Geri ödəniş" xml:space="preserve">
+    <value>Geri ödəniş</value>
+  </data>
+  <data name="Göndər" xml:space="preserve">
+    <value>Göndər</value>
+  </data>
+  <data name="Hansı metodlarla alış-veriş edə bilərəm?" xml:space="preserve">
+    <value>Hansı metodlarla alış-veriş edə bilərəm?</value>
+  </data>
+  <data name="Haqqımızda" xml:space="preserve">
+    <value>Haqqımızda</value>
+  </data>
+  <data name="Hesabım" xml:space="preserve">
+    <value>Hesabım</value>
+  </data>
+  <data name="Həftəiçi" xml:space="preserve">
+    <value>Həftəiçi</value>
+  </data>
+  <data name="Həftəsonu" xml:space="preserve">
+    <value>Həftəsonu</value>
+  </data>
+  <data name="Həmçinin abunə ol və ən son yeniliklərdən xəbərdar olun." xml:space="preserve">
+    <value>Həmçinin abunə ol və ən son yeniliklərdən xəbərdar ol</value>
+  </data>
+  <data name="Kameralar" xml:space="preserve">
+    <value>Kameralar</value>
+  </data>
+  <data name="Kartla / nağd / kredit" xml:space="preserve">
+    <value>Kartla / nağd / kredit</value>
+  </data>
+  <data name="Karyera və yüksəliş" xml:space="preserve">
+    <value>Career and promotion</value>
+  </data>
+  <data name="Kateqoriyalar" xml:space="preserve">
+    <value>Kateqoriyalar</value>
+  </data>
+  <data name="Komputer və Aksesuarlar" xml:space="preserve">
+    <value>Komputer və Aksesuarlar</value>
+  </data>
+  <data name="Kondisonerlər" xml:space="preserve">
+    <value>Kondisonerlər</value>
+  </data>
+  <data name="Kupon ilk online alış-veriş zamanı sistemimiz tərəfindən avtomatik daxil edilir!Nəzərinizə çatdırırıq ki, kuponun yararlılığı üçün son tarixi qeydiyyatdan 10 gün sonrakı müddətə qədərdir!" xml:space="preserve">
+    <value>Kupon ilk online alış-veriş zamanı sistemimiz tərəfindən avtomatik daxil edilir!Nəzərinizə çatdırırıq ki, kuponun yararlılığı üçün son tarixi qeydiyyatdan 10 gün sonrakı müddətə qədərdir!</value>
+  </data>
+  <data name="Led TV" xml:space="preserve">
+    <value>Led TV</value>
+  </data>
+  <data name="Müqayisə" xml:space="preserve">
+    <value>Müqayisə</value>
+  </data>
+  <data name="Məhsulların qarantisi üçün əlavə ödəniş etməliyəm?" xml:space="preserve">
+    <value>Məhsulların qarantisi üçün əlavə ödəniş etməliyəm?</value>
+  </data>
+  <data name="Məmnuniyyət" xml:space="preserve">
+    <value>Məmnuniyyət</value>
+  </data>
+  <data name="Məzmun" xml:space="preserve">
+    <value>Məzmun</value>
+  </data>
+  <data name="Oyun avadanlıqları" xml:space="preserve">
+    <value>Oyun avadanlıqları</value>
+  </data>
+  <data name="Oyun konsolları" xml:space="preserve">
+    <value>Oyun konsolları</value>
+  </data>
+  <data name="Pulsuz çatdırılma" xml:space="preserve">
+    <value>Pulsuz çatdırılma</value>
+  </data>
+  <data name="Qeydiyyat" xml:space="preserve">
+    <value>Qeydiyyat</value>
+  </data>
+  <data name="Qeydiyyat1" xml:space="preserve">
+    <value>d</value>
+  </data>
+  <data name="Qulaqcıqlar" xml:space="preserve">
+    <value>Qulaqcıqlar</value>
+  </data>
+  <data name="Rayonlara pulsuz çatdırılma mümkündürmü??" xml:space="preserve">
+    <value>Rayonlara pulsuz çatdırılma mümkündürmü??</value>
+  </data>
+  <data name="Sifarişini izlə" xml:space="preserve">
+    <value>Sifarişini izlə</value>
+  </data>
+  <data name="Sizdən gələn rəylər" xml:space="preserve">
+    <value>Sizdən gələn rəylər</value>
+  </data>
+  <data name="Smart qadgetlər" xml:space="preserve">
+    <value>Smart qadgetlər</value>
+  </data>
+  <data name="Smartfonlar" xml:space="preserve">
+    <value>Smartfonlar</value>
+  </data>
+  <data name="Son Paylaşılanlar" xml:space="preserve">
+    <value>Son Paylaşılanlar</value>
+  </data>
+  <data name="Soyuducular" xml:space="preserve">
+    <value>Soyuducular</value>
+  </data>
+  <data name="Səhifələr" xml:space="preserve">
+    <value>Səhifələr</value>
+  </data>
+  <data name="Sərfəli qiymətlərlə" xml:space="preserve">
+    <value>Sərfəli qiymətlərlə</value>
+  </data>
+  <data name="Tez-tez verilən suallar" xml:space="preserve">
+    <value>Tez-tez verilən suallar</value>
+  </data>
+  <data name="Təkrar şifrə" xml:space="preserve">
+    <value>Təkrar şifrə</value>
+  </data>
+  <data name="və ya" xml:space="preserve">
+    <value>və ya</value>
+  </data>
+  <data name="Zəhmət olmasa düzgün elektron ünvanı daxil edin..." xml:space="preserve">
+    <value>Zəhmət olmasa düzgün elektron ünvanı daxil edin...</value>
+  </data>
+  <data name="Zəhmət olmasa istifadəçi adı yaradın" xml:space="preserve">
+    <value>Please enter a valid email address</value>
+  </data>
+  <data name="Ünvanımız" xml:space="preserve">
+    <value>Ünvanımız</value>
+  </data>
+  <data name="İlk alışda 25 azn endirim kuponu qazan!" xml:space="preserve">
+    <value>İlk alışda 25 azn endirim kuponu qazan!</value>
+  </data>
+  <data name="İstifadəçi adı" xml:space="preserve">
+    <value>İstifadəçi adı</value>
+  </data>
+  <data name="İstədiyin məhsulu elə indi tap." xml:space="preserve">
+    <value>İstədiyin məhsulu elə indi tap.</value>
+  </data>
+  <data name="İşə qəbul prosesi" xml:space="preserve">
+    <value>İşə qəbul prosesi</value>
+  </data>
+  <data name="Şifrə" xml:space="preserve">
+    <value>Şifrə</value>
+  </data>
+  <data name="Şifrəni unutmusan?" xml:space="preserve">
+    <value>Şifrəni unutmusan?</value>
+  </data>
+  <data name="Ən çox satılanlar" xml:space="preserve">
+    <value>Ən çox satılanlar</value>
+  </data>
+  <data name="Əsas səhifə" xml:space="preserve">
+    <value>Əsas səhifə</value>
+  </data>
+</root>

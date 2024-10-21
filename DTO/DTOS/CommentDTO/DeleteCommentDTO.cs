@@ -8,6 +8,6 @@ namespace DTO.DTOS.CommentDTO
 {
     public class DeleteCommentDTO
     {
-        public int CommentId { get; set; }
+        public Guid CommentId { get; set; }
     }
 }

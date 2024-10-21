@@ -1,5 +1,6 @@
 ﻿using Business.Services;
 using Data.Services;
+using DTO.DTOS.CommentDTO;
 using Entity.Models;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Business.Manager
             _dal = dal;
         }
 
-        public Task<IQueryable<Comments>> CommentListByProduct(int ProductId)
+        public Task<IQueryable<Comments>> CommentListByProduct(Guid ProductId)
         {
            return _dal.CommentListByProduct(ProductId); 
         }
@@ -40,6 +41,15 @@ namespace Business.Manager
         public Comments GetById(int id)
         {
             return _dal.GetById(id);
+        }
+        public Comments GetById(Guid id)
+        {
+            return _dal.GetById(id);
+        }
+
+        public async Task<CommentRatedPercentDTO> GetCommentRatedPercent(Guid ProductId)
+        {
+            return await _dal.GetCommentRatedPercent(ProductId);
         }
 
         public async Task Update(Comments entity)

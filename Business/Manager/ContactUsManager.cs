@@ -39,6 +39,31 @@ namespace Business.Manager
             return _dal.GetById(id);    
         }
 
+        public ContactUs GetById(Guid id)
+        {
+            return _dal.GetById(id);
+        }
+
+        public async Task<int> ReadMessageCount()
+        {
+            return await _dal.ReadMessageCount();
+        }
+
+        public Task<IQueryable<ContactUs>> ReadMessageList()
+        {
+            return _dal.ReadMessageList();
+        }
+
+        public async Task<IQueryable<ContactUs>> UnReadMessageList()
+        {
+            return await _dal.UnReadMessageList();
+        }
+
+        public async Task<int> UnReadReadMessageCount()
+        {
+            return await _dal.UnReadMessageCount();
+        }
+
         public async Task Update(ContactUs entity)
         {
             await  _dal.Update(entity);

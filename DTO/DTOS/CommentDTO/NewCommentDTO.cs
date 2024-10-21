@@ -11,10 +11,12 @@ namespace DTO.DTOS.CommentDTO
     {
         public Guid AppUserId { get; set; }
 
-        public int ProductId { get; set; }
+        public Guid ProductId { get; set; }
 
         public DateTime MessageDate { get; set; }
 
         public string Content { get; set; }
+
+        public int rate { get; set; }   
     }
 }

@@ -1,0 +1,25 @@
+﻿
+<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#subscriberPanel" aria-expanded="false" aria-controls="productPanel" class="side-nav-link">
+        <i class="mdi mdi-person"></i>
+        <span>Başlıq paylaşımları </span>
+        <span class="menu-arrow"></span>
+    </a>
+    <div class="collapse" id="subscriberPanel">
+        <ul class="side-nav-second-level">
+            <li>
+                <a asp-controller="Sliders" asp-action="ActiveSliderList">
+                   
+                    Aktiv paylaşımlar
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Sliders" asp-action="DeactiveSliderList">
+                    <span class="badge bg-success float-end"></span>
+                      Deaktiv Paylaşımlar
+                   
+                </a>
+            </li>
+        </ul>
+    </div>
+</li>

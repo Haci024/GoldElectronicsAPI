@@ -1,4 +1,5 @@
-﻿using Entity.Models;
+﻿using DTO.DTOS.MarksDTO;
+using Entity.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace Business.Services
 {
     public interface IMarkService:IGenericService<Marks>
     {
+        Task<IEnumerable<MarkListDTO>> DeactiveMarkList();
+        Task<IEnumerable<MarkListDTO>> ActiveMarkList();
 
     }
 }

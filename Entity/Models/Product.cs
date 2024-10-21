@@ -8,15 +8,17 @@ namespace Entity.Models
 {
     public class Product
     {
-        public int Id { get; set; }
+        public Product()
+        {
+            Id = Guid.NewGuid();
+        }
+        public Guid Id { get; set; }
 
         public string Name { get; set; }
 
-        public Category Category { get; set; }
+        public Marks Marks { get; set; }
 
-        public int CategoryId { get; set; }
-
-        public string  Description { get; set; }
+        public Guid MarksId { get; set; }
 
         public ICollection<ImageList> ProductImages { get; set; }
 
@@ -31,6 +33,24 @@ namespace Entity.Models
         public decimal  SalesPrice { get; set; }
 
         public ICollection<Comments> Comments { get; set; }
+
+        public ICollection<WishList> WishList { get; set; }
+
+        public ICollection<Compare> Compare { get; set; }
+
+        public ICollection<ProductCompany> ProductCompanies { get; set; }
+     
+        public ICollection<DescriptionList> DescriptionList { get; set; }
+
+        public DateTime? LastDateForIsSale { get; set; }
+
+        public DateTime AddingDate { get; set; }
+
+        public Category Category { get; set; }
+
+        public Guid CategoryId { get; set; }
+
+        public Stock Stock { get; set; }
 
 
     }

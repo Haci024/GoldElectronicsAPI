@@ -12,6 +12,10 @@ namespace DTO.DTOS.CategoryDTO.Main
 
         public bool Status { get; set; }
 
+        public string ImageUrl { get; set; }
+
+        public bool CategoryOrMarks { get; set; }
+
         //  public int MainCategoryId { get; set; } 
 
 

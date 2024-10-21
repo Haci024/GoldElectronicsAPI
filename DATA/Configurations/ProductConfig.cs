@@ -15,9 +15,15 @@ namespace Data.Configurations
         {
             builder.HasKey(x => x.Id);
             builder.HasMany(x => x.ProductImages).WithOne(x => x.Product).HasForeignKey(x => x.ProductId);
-            builder.HasOne(x => x.Category).WithMany(x =>x.Products).HasForeignKey(x => x.CategoryId);
+            builder.HasMany(x => x.WishList).WithOne(x =>x.Products).HasForeignKey(x => x.ProductId);
+            builder.HasMany(x=>x.Comments).WithOne(x=>x.Product).HasForeignKey(x=>x.ProductId);
+            builder.HasMany(x=>x.Compare).WithOne(x=>x.Product).HasForeignKey(x=>x.ProductId);
             builder.HasMany(x => x.Colors).WithOne(x => x.Product).HasForeignKey(x => x.ProductId);
+            builder.HasMany(x => x.DescriptionList).WithOne(x => x.Product).HasForeignKey(x => x.ProductId);
+            builder.HasOne(x => x.Stock).WithOne(x => x.Product);
             builder.Property(x => x.Price).HasColumnType("decimal(6,2)");
+            
+
         }
     }
 }

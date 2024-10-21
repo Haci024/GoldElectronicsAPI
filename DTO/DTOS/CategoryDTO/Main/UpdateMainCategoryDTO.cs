@@ -8,7 +8,6 @@ namespace DTO.DTOS.CategoryDTO.Main
 {
     public class UpdateMainCategoryDTO
     {
-        public int Id { get; set; } 
 
         public string Name { get; set; }
 

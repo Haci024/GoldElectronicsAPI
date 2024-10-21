@@ -1,4 +1,8 @@
-﻿using DTO.DTOS.SubscriberDTO;
+﻿using DTO.DTOS.ContactUsDTO;
+using DTO.DTOS.CvAndCareerDTO;
+using DTO.DTOS.SubscriberDTO;
+using DTO.DTOS.UsersDTO.RegisterDTO;
+using Entity.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +13,12 @@ namespace Business.Services
 {
     public interface IEmailService
     {
-        Task NewSubscriberMessage(NewSubscriberDTO dto);
-        Task ForgetPasswordCodeMessage(NewSubscriberDTO dto);
-        Task ResetPasswordCodeMessage(NewSubscriberDTO dto);
-        Task RemoveSubscriberMessage(NewSubscriberDTO dto);
+        void NewSubscriberMessage(NewSubscriberDTO dto);
+        void ForgetPasswordCodeMessage();
+        void ResetPasswordCodeMessage();
+        void RemoveSubscriberMessage(RemoveSubscriberDTO dto);
+        void ConfirmCodeForNewUser(AppUser user);
+        void AutoMessageForContactUs(NewContactUsDTO dto);
+        void AutoMessageForCareer(AddCvDTO dto);
     }
 }

@@ -8,6 +8,6 @@ namespace DTO.DTOS.CategoryDTO.Main
 {
     public class DeleteMainCategoryDTO
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }

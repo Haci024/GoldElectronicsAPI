@@ -1,9 +1,91 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\admin\assets\js\signalRConnection.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="FluentValidation" Version="11.9.2">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="MailKit" Version="4.7.0">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.6">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\GoldManagementPanel\DTOS\UsersDTO\" />
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\ui\assets\js\components\hs.countdown.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.fancybox.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.focus-state.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.go-to.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.hamburgers.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.header.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.malihu-scrollbar.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.onscroll-animation.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.quantity-counter.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.range-slider.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.scroll-nav.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.selectpicker.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.show-animation.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.slick-carousel.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.svg-injector.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.unfold.js" />
+    <None Include="wwwroot\ui\assets\js\components\hs.validation.js" />
+    <None Include="wwwroot\ui\assets\js\hs.core.js" />
+    <None Include="wwwroot\ui\assets\vendor\appear.js" />
+    <None Include="wwwroot\ui\assets\vendor\bootstrap-select\dist\js\bootstrap-select.min.js" />
+    <None Include="wwwroot\ui\assets\vendor\bootstrap\bootstrap.min.js" />
+    <None Include="wwwroot\ui\assets\vendor\fancybox\jquery.fancybox.min.js" />
+    <None Include="wwwroot\ui\assets\vendor\hs-megamenu\src\hs.megamenu.js" />
+    <None Include="wwwroot\ui\assets\vendor\ion-rangeslider\js\ion.rangeSlider.min.js" />
+    <None Include="wwwroot\ui\assets\vendor\jquery-migrate\dist\jquery-migrate.min.js" />
+    <None Include="wwwroot\ui\assets\vendor\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\ui\assets\vendor\jquery.countdown.min.js" />
+    <None Include="wwwroot\ui\assets\vendor\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\ui\assets\vendor\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.concat.min.js" />
+    <None Include="wwwroot\ui\assets\vendor\popper.js\dist\umd\popper.min.js" />
+    <None Include="wwwroot\ui\assets\vendor\slick-carousel\slick\slick.js" />
+    <None Include="wwwroot\ui\assets\vendor\svg-injector\dist\svg-injector.min.js" />
+    <None Include="wwwroot\ui\assets\vendor\typed.js\lib\typed.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\admin\assets\js\signalRConnection.js" />
+  </ItemGroup>
 
 </Project>

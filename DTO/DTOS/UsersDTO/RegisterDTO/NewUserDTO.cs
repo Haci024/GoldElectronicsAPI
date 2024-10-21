@@ -17,5 +17,6 @@ namespace DTO.DTOS.UsersDTO.RegisterDTO
         public string Password { get; set; }
 
         public string ConfirmPassword { get; set; }
+
     }
 }

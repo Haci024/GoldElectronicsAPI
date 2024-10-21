@@ -18,7 +18,12 @@ namespace Entity.Models
         public int ForgetPasswordCode { get; set; }
 
         public int ConfirmCode { get; set; }
-
         public ICollection<Comments> Comments { get; set; }
+
+       // public ICollection<Basket> Baskets { get; set; }
+
+
+       // public ICollection<Orders> Orders { get; set; }
     }
+
 }

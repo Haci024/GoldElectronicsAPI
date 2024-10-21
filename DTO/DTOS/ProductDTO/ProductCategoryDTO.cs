@@ -8,6 +8,6 @@ namespace DTO.DTOS.ProductDTO
 {
     public class ProductCategoryDTO
     {
-        public int CategoryId { get; set; }
+        public Guid MarksId { get; set; }
     }
 }

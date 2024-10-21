@@ -8,7 +8,11 @@ namespace Entity.Models
 {
     public class ContactUs
     {
-        public int Id { get; set; }
+        public ContactUs()
+        {
+            Id = Guid.NewGuid();
+        }
+        public Guid Id { get; set; }
 
         public string FullName { get; set; }
 

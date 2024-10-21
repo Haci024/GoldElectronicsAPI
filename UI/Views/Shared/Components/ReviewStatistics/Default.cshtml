@@ -1,0 +1,156 @@
+﻿@model CommentRatedPercentDTO
+
+@inject LanguageService languageService
+@{
+ 
+}
+<div class="mb-3">
+    <h3 class="font-size-18 mb-6" id="messageCount"></h3>
+    <h2 class="font-size-30 font-weight-bold text-lh-1 mb-0" id="overalRate">@Model.AverageStarCount.ToString(".0")</h2>
+    <div class="text-lh-1">@languageService.GetKey("Ortalama")</div>
+</div>
+
+<!-- Ratings -->
+<ul class="list-unstyled">
+    <li class="py-1">
+        <a class="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
+            <div class="col-auto mb-2 mb-md-0">
+                <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                </div>
+            </div>
+            <div class="col-auto mb-2 mb-md-0">
+                <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
+                    <div class="progress-bar" id="five" role="progressbar" style="background-color:greenyellow"  aria-valuenow="190" aria-valuemin="0" aria-valuemax="90"></div>
+                </div>
+            </div>
+            <div class="col-auto text-right">
+                <span class="text-gray-90" id="fiveStar"></span>
+            </div>
+        </a>
+    </li>
+    <li class="py-1">
+        <a class="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
+            <div class="col-auto mb-2 mb-md-0">
+                <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                    <small class="far fa-star text-muted"></small>
+                </div>
+            </div>
+            <div class="col-auto mb-2 mb-md-0">
+                <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
+                    <div class="progress-bar" id="four" role="progressbar" style="background-color:yellow" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col-auto text-right">
+                <span class="text-gray-90" id="fourStar"></span>
+            </div>
+        </a>
+    </li>
+    <li class="py-1">
+        <a class="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
+            <div class="col-auto mb-2 mb-md-0">
+                <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                    <small class="far fa-star text-muted"></small>
+                    <small class="far fa-star text-muted"></small>
+                </div>
+            </div>
+            <div class="col-auto mb-2 mb-md-0">
+                <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
+                    <div  id="three" class="progress-bar" role="progressbar" style="background-color:orange" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col-auto text-right">
+                <span class="text-gray-90" id="threeStar"></span>
+            </div>
+        </a>
+    </li>
+    <li class="py-1">
+        <a class="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
+            <div class="col-auto mb-2 mb-md-0">
+                <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                    <small class="far fa-star text-muted"></small>
+                    <small class="far fa-star text-muted"></small>
+                    <small class="far fa-star text-muted"></small>
+                </div>
+            </div>
+            <div class="col-auto mb-2 mb-md-0">
+                <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
+                    <div class="progress-bar" id="two" role="progressbar" style="background-color:red" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col-auto text-right">
+                <span class="text-gray-90" id="twoStar"></span>
+            </div>
+        </a>
+    </li>
+    <li class="py-1">
+        <a class="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
+            <div class="col-auto mb-2 mb-md-0">
+                <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
+                    <small class="fas fa-star"></small>
+                    <small class="far fa-star text-muted"></small>
+                    <small class="far fa-star text-muted"></small>
+                    <small class="far fa-star text-muted"></small>
+                    <small class="far fa-star text-muted"></small>
+                </div>
+            </div>
+            <div class="col-auto mb-2 mb-md-0">
+                <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
+                    <div class="progress-bar" role="progressbar" id="one" style="background-color:darkred" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col-auto text-right">
+                <span class="text-gray-90" id="oneStar"></span>
+            </div>
+        </a>
+    </li>
+</ul>
+<script src="~/admin/assets/js/vendor.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/lib/microsoft-signalr/signalr.js"></script>
+<script src="~/lib/microsoft-signalr/signalr.min.js"></script>
+<script>
+    $(document).ready(() => {
+        var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:44387/SignalRHub").build();
+        
+        connection.start();
+        $("#connectionStatus").text(connection.state);
+        setInterval(() => {
+            connection.invoke("CommentStatistic",@Model.productId);
+        }, 1000);
+        connection.on("CommentStatistics", (commentStatistics) => {
+            $("#oneStar").text(commentStatistics.oneStarCount);
+             $("#twoStar").text(commentStatistics.twoStarCount);
+            $("#threeStar").text(commentStatistics.threeStarCount);
+            $("#fourStar").text(commentStatistics.fourthStarCount);
+            $("#fiveStar").text(commentStatistics.fiveStarCount);
+            $("#oneStar").text(commentStatistics.oneStarCount);
+            $("#overalRate").text((commentStatistics.averageStarCount).toFixed(1));
+            $("#messageCount").text(commentStatistics.commentCount);
+            $("#one").css("width", commentStatistics.oneStarRange + "%");
+            $("#two").css("width", commentStatistics.twoStarRange + "%");
+            $("#three").css("width", commentStatistics.threeStarRange + "%");
+            $("#four").css("width", commentStatistics.fourthStarRange + "%");
+            $("#five").css("width", commentStatistics.fiveStarRange + "%");
+        });
+
+
+
+
+
+
+    });
+</script>
